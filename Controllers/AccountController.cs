@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebLogginApp.Models;
@@ -401,6 +402,13 @@ namespace WebLogginApp.Controllers
         public ActionResult ExternalLoginFailure()
         {
             return View();
+        }
+
+        public void Test()
+        {
+            IdentityUser identityUser = new IdentityUser();
+            UserManager<IdentityUser> userManager;
+           var length = identityUser.UserName.Length;
         }
 
         protected override void Dispose(bool disposing)
